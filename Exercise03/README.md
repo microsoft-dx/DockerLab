@@ -1,3 +1,5 @@
+[Back to Menu](../README.md)
+
 #Exercise 3 - Multi-container Applications with Docker Compose
 
 **Compose** is a tool for defining and running multi-container Docker applications. With Compose, you use a Compose file to configure your application's services. Then, using a single command, you create and start all the services from your configuration. To learn more about all the features of Compose see [the list of features](https://docs.docker.com/compose/overview/#features).
@@ -14,7 +16,7 @@ Using Compose is basically a three-step process.
 
 ## Learning by example: WordPress
 
-You can use Docker Compose to easily run WordPress in an isolated environment built with Docker containers. This quick-start guide demonstrates how to use Compose to set up and run WordPress. Before starting, you'll need to have Compose installed.
+You can use Docker Compose to easily run WordPress in an isolated environment built with Docker containers. This quick-start guide demonstrates how to use Compose to set up and run WordPress. 
 
 ###1. Create an empty project directory.
 
@@ -157,3 +159,4 @@ At this point, WordPress should be running on port 8000 of your Docker Host, and
 
 ![](images/wp01.png)
 
+[Back to Menu](../README.md)

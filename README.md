@@ -8,7 +8,7 @@ A hands-on lab for getting started with Docker using Microsoft Azure.
 
 [Setup - Create a Free Azure Subscription and set up Ubuntu Docker Host](Setup/README.md)
 
-[Exercise 1 - Docker Commands](Exercise02/README.md)
+[Exercise 1 - Docker Commands](Exercise01/README.md)
 
 [Exercise 2 - Docker Images](Exercise02/README.md)
 

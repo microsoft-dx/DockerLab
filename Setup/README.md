@@ -1,3 +1,5 @@
+[Back to Menu](../README.md)
+
 #Setup - Create a Free Azure Subscription and set up Ubuntu Docker Host
 
 In order to create a free Azure Subscription, you can either use a Microsoft Azure Pass - provided you have got a code - or create a free trial.
@@ -78,3 +80,5 @@ During these exercises we will use the Docker image from the Azure Marketplace.
     ![](images/kitty.png)
 
     ![](images/kitty2.png)
+
+[Back to Menu](../README.md)

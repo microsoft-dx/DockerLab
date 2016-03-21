@@ -1,3 +1,5 @@
+[Back to Menu](../README.md)
+
 # Exercise 2 - Docker Images
 
 Docker images are the basis of containers. Each time you've used ``docker run`` you told it which image you wanted. In the previous section of the guide you used Docker images that already exist, for example the ubuntu image.
@@ -187,6 +189,13 @@ $ touch Dockerfile
 ```
 
 Each instruction creates a new layer of the image. Try a simple example now for building your own Sinatra image for your fictitious development team.
+
+Open the `Dockerfile` with your favorite text editor - for example, `nano`:
+
+```bash
+$ nano Dockerfile
+```
+
 ```bash
 # This is a comment
 FROM ubuntu:14.04
@@ -195,7 +204,9 @@ RUN apt-get update && apt-get install -y ruby ruby-dev
 RUN gem install sinatra
 ```
 
-Examine what your ``Dockerfile`` does. Each instruction prefixes a statement and is capitalized.
+Now save the file and close the text editor. If you're using `nano`, the key combination is `CTRL + O` to save, and `CTRL + X` to exit, respectively.
+
+Let's examine what your ``Dockerfile`` does. Each instruction prefixes a statement and is capitalized.
 ```bash
 INSTRUCTION statement
 ```
@@ -294,3 +305,5 @@ Deleted: 5c58979d73ae448df5af1d8142436d81116187a7633082650549c52c3a2418f0
 
 
 > Note: To remove an image from the host, please make sure that there are no containers actively based on it.
+
+[Back to Menu](../README.md)
