@@ -23,8 +23,8 @@ $ cd aspnet
 Then, clone this repository on your development machine and go to the `HelloWeb` directory using `git`:
 
 ```bash
-git clone http://github.com/aspnet/Home.git aspnet-Home
-cd aspnet-Home/samples/1.0.0-rc1-update1/HelloMvc
+$ git clone http://github.com/aspnet/Home.git aspnet-Home
+$ cd aspnet-Home/samples/1.0.0-rc1-update1/HelloMvc
 ```
 
 In this directory you will see a number of files, among them a `Dockerfile` and a `project.json` file:
@@ -116,7 +116,7 @@ Our container has started! However, we are not quite done yet. We need to comple
 
 Now let's head to the browser to see if it is working. Open http://your-cloud-service-name.cloudapp.net:80/ in your web browser:
 
- 
+![](images/aspnet01.png)
 
 Voila, you have an ASP.NET 5 application running on Linux inside a Docker container!
 
