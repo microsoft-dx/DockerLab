@@ -15,3 +15,5 @@ A hands-on lab for getting started with Docker using Microsoft Azure.
 [Exercise 3 - Multi-container Applications with Docker Compose](Exercise03/README.md)
 
 [Exercise 4 - Multi-host Cluster with Docker Swarm](Exercise04/README.md)
+
+[Exercise 5 - Running ASP.NET 5 Web Applications under Linux with Docker](Exercise05/README.md)

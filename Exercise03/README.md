@@ -40,7 +40,7 @@ A `Dockerfile` is a file that defines the environment in which your application 
 
 In this case, your `Dockerfile` should include these two lines:
 
-```bash
+```
 FROM orchardup/php5
 ADD . /code
 ```
@@ -52,7 +52,9 @@ This tells the Docker Engine daemon how to build an image defining a container t
 
 The `docker-compose.yml` file is the imput for Composer, and will tell Composer to start your web service and a separate MySQL instance:
 
-```bash
+> Note: Do NOT use tabs to indent lines in YAML files. Use spaces instead. Tabs are not accepted and will produce errors when tools try to read tab-indented YAML files.
+
+```
 web:
   build: .
   command: php -S 0.0.0.0:8000 -t /code/wordpress/
@@ -65,6 +67,7 @@ db:
   environment:
     MYSQL_DATABASE: wordpress
 ```
+
 
 So what does the `docker-compose.yml` file above say about our application?
 
@@ -117,6 +120,7 @@ require_once(ABSPATH . 'wp-settings.php');
 ?>
 ```
 
+Note the `define('DB_HOST', "db:3306");` line. This uses the name of the image as defined in your Compose file, which is `db`. To understand how Docker creates and joins images to virtual networks, you should [read the networking documentation](https://docs.docker.com/engine/userguide/networking/dockernetworks/). For now, suffice to say that Docker joins each container under a specific name to the default network.
 
 ###7. Verify the contents and structure of your project directory
 
@@ -158,5 +162,13 @@ Click `OK` to add the new endpoint. Applying the changes can take up to 1-2 minu
 At this point, WordPress should be running on port 8000 of your Docker Host, and you can complete the "famous five-minute installation" as a WordPress administrator.
 
 ![](images/wp01.png)
+
+###12. Stop the application
+
+You can stop all the containers in your application by using `docker-compose stop`.
+
+```bash
+$ docker-compose stop
+```
 
 [Back to Menu](../README.md)
