@@ -102,13 +102,15 @@ $ ssh -L 2375:swarm-master-0:2375 -N core@swarm-<<DNSNAME>>-manage.westus.clouda
 
 > NOTE: Since `sshTunnelCmd` will keep running with no output, make sure you add the `&` character at the end of the command to return to the bash prompt.
 
-> Alternatively, you can let the `sshTunnelCmd` running and open a second SSH session on the machine.
+> Alternatively, you can let the `sshTunnelCmd` session running and open a second SSH session from your PC to the VM.
 
 After this you can use `dockerCmd` command that points to localhost, just as Swarm managers were running on your development machine:
 ```bash
 $ docker -H tcp://localhost:2375 info
 ```
 You should see an output listing all the nodes in the swarm.
+
+## Step 4: Testing it out
 
 Since the Docker CLI works seamlessly with a Swarm cluster just as it did with a single host, go ahead and try some of the commands you used in previous exercises.
 Make sure you add `-H tcp://localhost:2375` to point Docker CLI to the cluster.
@@ -127,6 +129,87 @@ $ docker -H tcp://localhost:2375 run hello-world
 
 > `$ export DOCKER_API_VERSION=1.21`
 
+> NOTE: you can point your docker client permanently at the Swarm cluster by typing
+
+> `$ export DOCKER_HOST=:2375`
+> `$ docker ps`  
+
+## Scaling out an application
+
+You can now scale out an application to the swarm cluster by running multiple instances of one (or more) images on the cluster, in a load balanced way.
+
+First we will create our application. 
+
+```bash
+$ export DOCKER_HOST=:2375
+$ docker ps
+
+$ cd ~
+$ mkdir swarmapp
+$ cd swarmapp
+$ touch docker-compose.yml
+```
+
+Open the file `docker-compose.yml` and add the following content:
+
+```
+web:
+  image: "yeasy/simple-web"
+  ports:
+    - "80:80"
+  restart: "always"
+```
+
+Build and run the application:
+
+```bash
+$ docker-compose up -d
+```
+
+After the application is running, run `docker ps` to check:
+
+```bash
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+0648422f32c1        yeasy/simple-web    "/bin/sh -c 'python i"   14 seconds ago      Up 12 seconds       192.168.0.6:80->80/tcp   swarm-node-1/swarmapp_web_1
+```
+
+You can now scale the web application. For example, if you have 3 agents, you can type `docker-compose scale web=3` , and this will scale to the rest of your agents. Note that in this example you can only scale up to the number of agents that you have since each container requires port 80, so if you deployed a single agent, you won't be able to scale up. The Azure load balancer will automatically pick up the new containers.
+
+```bash
+$ docker-compose scale web=3
+WARNING: The "web" service specifies a port on the host. If multiple containers for this service are created on a single host, the port will clash.
+Creating and starting 2 ... done
+Creating and starting 3 ... done
+```
+
+Now do `docker ps` again:
+
+```bash
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                    NAMES
+0bab09ff3d19        yeasy/simple-web    "/bin/sh -c 'python i"   7 seconds ago       Up 5 seconds        192.168.0.5:80->80/tcp   swarm-node-0/swarmapp_web_2
+7c71dfe9a724        yeasy/simple-web    "/bin/sh -c 'python i"   7 seconds ago       Up 5 seconds        192.168.0.4:80->80/tcp   swarm-node-2/swarmapp_web_3
+0648422f32c1        yeasy/simple-web    "/bin/sh -c 'python i"   8 minutes ago       Up 8 minutes        192.168.0.6:80->80/tcp   swarm-node-1/swarmapp_web_1
+```
+
+You can scale it back down to one node: 
+
+```bash
+$ docker-compose scale web=1
+WARNING: The "web" service specifies a port on the host. If multiple containers for this service are created on a single host, the port will clash.
+Stopping swarmapp_web_2 ... done
+Stopping swarmapp_web_3 ... done
+Removing swarmapp_web_2 ... done
+Removing swarmapp_web_3 ... done
+```
+
+There you go - you have just scaled  a container application up and down, inside a Swarm cluster!
+
+> NOTE: to point your Docker client back to the local Docker server, type
+
+> `$ export DOCKER_HOST=`
+> `$ docker ps`  
 
 ## Cleanup
 
@@ -139,5 +222,22 @@ Enter the Resource Group name and hit **Delete**.
 ![](images/swarm_delete_02.png)
 
 All the resources related to the swarm will be deleted, including the Resource Group itself.
+
+## Even better: Azure Container Service
+
+Did you like the ability to stand up a full Swarm cluster in minutes by using a template? Then you'll be happy to know that Microsoft has a service coming out that will allow you to do just that, without the hassle of managing virtual machines.
+
+[Azure Container Service](https://azure.microsoft.com/en-us/services/container-service/) (Preview) provides a way to simplify the creation, configuration, and management of a cluster of virtual machines that are preconfigured to run containerized applications. Using an optimized configuration of popular open-source scheduling and orchestration tools, ACS enables you to use your existing skills or draw upon a large and growing body of community expertise to deploy and manage container-based applications on Microsoft Azure. 
+
+ACS will soon be available to deploy by using the Azure Portal. In the meantime, you can take a look at the [GitHub repo](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm) which will allow deploying of ACS via an ARM template, just as you did previously in this exercise.
+
+### References
+
+This exercise borrows and adapts content from the following sources:
+
+1. [The official Microsoft Azure documentation](https://azure.microsoft.com/en-us/documentation/)
+2. [Docker Swarm Cluster template](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-cluster)
+3. [Docker Swarm Container Service Walkthrough](https://github.com/Azure/azure-quickstart-templates/blob/master/101-acs-swarm/docs/SwarmPreviewWalkthrough.md)
+
 
 [Back to Menu](../README.md)

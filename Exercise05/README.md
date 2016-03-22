@@ -124,5 +124,10 @@ Voila, you have an ASP.NET 5 application running on Linux inside a Docker contai
 
 Microsoft will continue to invest in running ASP.NET 5 applications on Linux and Docker and we are happy to bring you the Microsoft's first official Docker image: ASP.NET 5 Preview Image.
 
+### References
+
+This exercise borrows and adapts content from the following sources:
+
+1. [Running ASP.NET 5 applications in Linux Containers with Docker](https://blogs.msdn.microsoft.com/webdev/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker/)
 
 [Back to Menu](../README.md)

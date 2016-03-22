@@ -152,5 +152,11 @@ CONTAINER ID  IMAGE         COMMAND               CREATED        STATUS       PO
 
 Excellent. Our container has been stopped.
 
+### References
+
+This exercise borrows and adapts content from the following sources:
+
+1. [The official Docker documentation](https://docs.docker.com/)
+
 [Back to Menu](../README.md)
 

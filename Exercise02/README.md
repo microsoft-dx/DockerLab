@@ -306,4 +306,10 @@ Deleted: 5c58979d73ae448df5af1d8142436d81116187a7633082650549c52c3a2418f0
 
 > Note: To remove an image from the host, please make sure that there are no containers actively based on it.
 
+### References
+
+This exercise borrows and adapts content from the following sources:
+
+1. [The official Docker documentation](https://docs.docker.com/)
+
 [Back to Menu](../README.md)

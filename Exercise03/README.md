@@ -171,4 +171,11 @@ You can stop all the containers in your application by using `docker-compose sto
 $ docker-compose stop
 ```
 
+### References
+
+This exercise borrows and adapts content from the following sources:
+
+1. [The official Docker documentation](https://docs.docker.com/)
+2. [The official Microsoft Azure documentation](https://azure.microsoft.com/en-us/documentation/)
+
 [Back to Menu](../README.md)
