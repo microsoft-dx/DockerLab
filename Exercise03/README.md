@@ -51,7 +51,7 @@ This tells the Docker Engine daemon how to build an image defining a container t
 
 ###4. Create a `docker-compose.yml` file 
 
-The `docker-compose.yml` file is the imput for Composer, and will tell Composer to start your web service and a separate MySQL instance:
+The `docker-compose.yml` file is the input for Composer, and will tell Composer to start your web service and a separate MySQL instance:
 
 > Note: Do NOT use tabs to indent lines in YAML files. Use spaces instead. Tabs are not accepted and will produce errors when tools try to read tab-indented YAML files.
 
@@ -73,10 +73,10 @@ db:
 So what does the `docker-compose.yml` file above say about our application?
 
 - It consists of two Docker images, `web` and `db`.
-- `web` will be obtained by building from the current directory - using the `Dockerfile` we previously created.
+- `web` will be created by building from the current directory - using the `Dockerfile` we previously created.
 - `web` will run built-in web server on port 8000, which will be accessible from outside the Docker environment
 - `web` depends on the `db` image running
-- `db` will be pulled from the Docker Hub and will have a custom `MYSQL_DATABASE` environment variable. 
+- `db` is an image that will be pulled from the Docker Hub and will have a custom `MYSQL_DATABASE` environment variable. 
 
 
 ###5. Download WordPress into the current directory
