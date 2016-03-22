@@ -132,9 +132,8 @@ $ docker -H tcp://localhost:2375 run hello-world
 > NOTE: you can point your docker client permanently at the Swarm cluster by typing
 
 > `$ export DOCKER_HOST=:2375`
-> `$ docker ps`  
 
-## Scaling out an application
+## Step 5: Scaling out an application
 
 You can now scale out an application to the swarm cluster by running multiple instances of one (or more) images on the cluster, in a load balanced way.
 
@@ -209,7 +208,6 @@ There you go - you have just scaled  a container application up and down, inside
 > NOTE: to point your Docker client back to the local Docker server, type
 
 > `$ export DOCKER_HOST=`
-> `$ docker ps`  
 
 ## Cleanup
 
