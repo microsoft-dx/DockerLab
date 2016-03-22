@@ -31,13 +31,13 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 Docker containers are **lightweight**. Containers running on a single machine all share the same operating system kernel so they start instantly and make more efficient use of RAM. Images are constructed from layered filesystems so they can share common files, making disk usage and image downloads much more efficient.
 
-<table border="0">
+<table border="0" cellpadding="0" cellspacing="0">
     <tr>
-        <td style="width: 50%; vertical-align: baseline">
+        <td style="width: 50%;">
             <img src="images/what-is-docker-diagram.png"/>
         </td>
-        <td style="width: 50%; vertical-align: baseline">
-            <img src="images/what-is-vm-diagram.png"/>
+        <td style="width: 50%;">
+            <img src="images/what-is-vm-diagram.png" style="margin-top: 154px;"/>
         </td>
     </tr> 
 </table>
