@@ -1,6 +1,6 @@
 # Docker Hands-on Lab
 
-This is a hands-on lab for getting started with Docker using Microsoft Azure.
+This is a hands-on lab for getting started with [Docker](https://www.docker.com/) using [Microsoft Azure](https://azure.microsoft.com/).
 
 ## Lab Setup
 
@@ -31,22 +31,48 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 Docker containers are **lightweight**. Containers running on a single machine all share the same operating system kernel so they start instantly and make more efficient use of RAM. Images are constructed from layered filesystems so they can share common files, making disk usage and image downloads much more efficient.
 
-<table border="0">
+<table border="0" cellpadding="0" cellspacing="0">
     <tr>
-        <td style="width: 50%; vertical-align: baseline">
+        <td style="width: 50%;">
             <img src="images/what-is-docker-diagram.png"/>
         </td>
-        <td style="width: 50%; vertical-align: baseline">
-            <img src="images/what-is-vm-diagram.png"/>
+        <td style="width: 50%;">
+            <img src="images/what-is-vm-diagram.png" style="margin-top: 245px;"/>
         </td>
     </tr> 
 </table>
+
+## Why use Docker to build applications?
+
+There are several good reasons to consider Docker:
+
+- **Consistent Environments**. By packaging up the application with its configs and dependencies together and shipping as a container, the application will always work as designed locally, on another machine, in test or production. No more worries about having to install the same configs into a different environment.
+- **Small Footprint**. As explained above, sharing a kernel and filesystem layering makes for very small containers.
+- **Continuous Delivery**. Your Continous Integration and Continous Delivery solution - for instance [Visual Studio Team System](https://www.visualstudio.com/), [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) or [Jenkins](http://jenkins-ci.org/) - can be easily configured to use Docker containers to automatically build, deploy and test apps. So you can get a fully automated dev / test / production pipeline.
+- **Work together**. With [Docker Hub](https://hub.docker.com/) you can create and share your Docker images with other developers. Or you can stand up your private hub for your company to use.
 
 ## What is Microsoft Azure?
 
 [Microsoft Azure](https://azure.microsoft.com/) is a growing collection of [integrated cloud services](https://azure.microsoft.com/en-us/services/) - analytics, computing, database, mobile, networking, storage, and web.
 
+![](images/azure-landscape.png)
+
 Azure supports the broadest selection of operating systems, programming languages, frameworks, tools, databases and devices. Run Linux containers with Docker integration; build apps with JavaScript, Python, .NET, PHP, Java and Node.js; build back-ends for iOS, Android and Windows devices. Azure cloud service supports the same technologies millions of developers and IT professionals already rely on and trust.
+
+![](images/map.png)
+
+## How can Azure make your Docker experience better?
+
+Microsoft Azure is a great platform for running Docker workloads. Why?
+
+1. It allows you to easily deploy and configure Docker on any Linux Virtual Machine deployed in Azure, by means of the [Docker VM Extension](https://github.com/Azure/azure-docker-extension/blob/master/README.md). 
+2. It allows easy deployment and configuration of multi-host Docker clusters - or [Swarms](https://docs.docker.com/swarm/) - by using JSON-based deployment templates. You can stand up 100-node clusters in minutes by using [Azure Resource Manager templates](https://azure.microsoft.com/en-us/documentation/templates/). [Exercise 4 - Multi-host Cluster with Docker Swarm](Exercise04/README.md) contains an example of this.
+3. It offers a fully-managed clustering service called [Azure Container Service](https://azure.microsoft.com/en-us/services/container-service/) which can manage Docker clusters - as well as Apache Mesos clusters - without you having to manage Virtual Machines. An example of using ACS with Docker is [here](https://github.com/Azure/azure-quickstart-templates/tree/master/101-acs-swarm).
+4. It allows you to [run Docker on Windows](https://azure.microsoft.com/en-us/blog/docker-client-for-windows-is-now-available/). 
+5. It allows you to run [ASP.NET websites on Linux with Docker](https://blogs.msdn.microsoft.com/webdev/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker/) by using open source tools and frameworks like [ASP.NET MVC 5](http://www.asp.net/mvc/mvc5) and [.NET Core](https://github.com/dotnet/core).
+
+**Are you convinced yet?** Go ahead and [set up your environment](Setup/README.md) and try the exercises in this lab!
+
 
 ### References
 
