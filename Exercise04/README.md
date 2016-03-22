@@ -94,7 +94,9 @@ What we are interested in are the first two parameters. Copy them to a text file
 - `sshTunnelCmd` creates the SSH tunnel to connect to a Swarm manager.
 - `dockerCmd` is the command to point the Docker Client at the swarm.
 
-The `sshTunnelCmd` command will help you create a SSH tunnel to Docker Swarm Manager from your machine (this command will keep running with no output):
+The `sshTunnelCmd` command will help you create a SSH tunnel to Docker Swarm Manager from your machine (this command will keep running with no output). 
+
+The command below is just an example - use the `sshTunnelCmd` you picked up from the deployment, and append an `&` at the end:
 
 ```bash
 $ ssh -L 2375:swarm-master-0:2375 -N core@swarm-<<DNSNAME>>-manage.westus.cloudapp.azure.com -p 2200 &

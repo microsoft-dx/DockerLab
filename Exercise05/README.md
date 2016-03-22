@@ -68,7 +68,7 @@ The `RUN` instruction tells Docker to run the `dnu restore` command to install t
 
 The `EXPOSE` instruction will inform Docker that this image has a service which will be listening at port `5004` (see `project.json` of the sample file for details). 
 
-Lastly, the `ENTRYPOINT` instruction is the command executed to start the container and keep it up and running. In this case it is the `dnx -p project.json` command, starting the [Kestrel development server](https://github.com/aspnet/KestrelHttpServer) for ASP.NET 5. Once executed, this process will start listening to HTTP connections coming from port 5004. For more details as to how this is all wired, have a look at the `project.json` file.
+Lastly, the `ENTRYPOINT` instruction is the command executed to start the container and keep it up and running. In this case it is the `dnx -p project.json` command, starting the [Kestrel development server](https://github.com/aspnet/KestrelHttpServer) for ASP.NET 5. Once executed, this process will start listening to HTTP connections coming from port 5004. For more details as to how this is all wired up, have a look at the `project.json` file.
 
 ##Step 2: Build the container image
 
