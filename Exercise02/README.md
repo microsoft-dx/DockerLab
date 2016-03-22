@@ -4,7 +4,7 @@
 
 Docker images are the basis of containers. Each time you've used ``docker run`` you told it which image you wanted. In the previous section of the guide you used Docker images that already exist, for example the ubuntu image.
 
-You also discovered that Docker stores downloaded images on the Docker host. If an image isn't already present on the host then it'll be downloaded from a registry: by default the Docker Hub Registry.
+You also discovered that Docker stores downloaded images on the Docker host. If an image isn't already present on the host then it'll be downloaded from a registry: by default the [Docker Hub](https://hub.docker.com/) Registry.
 
 In this section you're going to explore Docker images a bit more including:
 
@@ -196,6 +196,8 @@ Open the `Dockerfile` with your favorite text editor - for example, `nano`:
 $ nano Dockerfile
 ```
 
+Type or paste the following lines inside the `Dockerfile`:
+
 ```bash
 # This is a comment
 FROM ubuntu:14.04
@@ -219,6 +221,8 @@ The first instruction ``FROM`` tells Docker what the source of our image is, in 
 Lastly, you've specified two ``RUN`` instructions. A RUN instruction executes a command inside the image, for example installing a package. Here you're updating our APT cache, installing Ruby and RubyGems and then installing the Sinatra gem.
 
 Now let's take our ``Dockerfile`` and use the ``docker build`` command to build an image.
+
+> NOTE: There is a . (dot) at the end of the `docker build` command, which tells Docker to build from the current folder.
 
 ```bash
 $ docker build -t ouruser/sinatra:v2 .

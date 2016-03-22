@@ -25,6 +25,7 @@ You can name the directory something easy for you to remember. This directory is
 This project directory will contain a `Dockerfile`, a `docker-compose.yaml` file, along with a downloaded wordpress directory and a custom `wp-config.php`, all of which you will create in the following steps.
 
 ```bash
+$ cd ~
 $ mkdir mywordpress
 ```
 

@@ -10,6 +10,15 @@ Let's try it now.
 
 ```bash
 $ docker run ubuntu /bin/echo 'Hello world'
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+203137e8afd5: Pull complete
+2ff1bbbe9310: Pull complete
+933ae2486129: Pull complete
+a3ed95caeb02: Pull complete
+Digest: sha256:1bea66e185d3464fec1abda32ffaf2a11de69833cfcf81bd2b9a5be147776814
+Status: Downloaded newer image for ubuntu:latest
 Hello world
 ```
 
