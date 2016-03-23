@@ -89,10 +89,12 @@ In the template deployment screen, you should see some attributes and output par
 
 ![](images/swarm04.png)
 
-What we are interested in are the first two parameters. Copy them to a text file for reference:
+What we are interested in are the first three parameters. Copy them to a text file for reference:
 
 - `sshTunnelCmd` creates the SSH tunnel to connect to a Swarm manager.
 - `dockerCmd` is the command to point the Docker Client at the swarm.
+- `swarmNodesLoadBalancerAddress` is the load-balanced HTTP endpoint you use to access cluster-deployed apps.
+
 
 The `sshTunnelCmd` command will help you create a SSH tunnel to Docker Swarm Manager from your machine (this command will keep running with no output). 
 
@@ -193,6 +195,10 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 7c71dfe9a724        yeasy/simple-web    "/bin/sh -c 'python i"   7 seconds ago       Up 5 seconds        192.168.0.4:80->80/tcp   swarm-node-2/swarmapp_web_3
 0648422f32c1        yeasy/simple-web    "/bin/sh -c 'python i"   8 minutes ago       Up 8 minutes        192.168.0.6:80->80/tcp   swarm-node-1/swarmapp_web_1
 ```
+
+If you access the HTTP load-balanced endpoint contained in the output `swarmNodesLoadBalancerAddress`, you should see the web app running:
+
+![](images/swarmbrowser.png)
 
 You can scale it back down to one node: 
 
