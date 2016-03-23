@@ -136,6 +136,12 @@ With those four new files in place, run `docker-compose build` from your project
 $ docker-compose build
 ```
 
+Also, let's go ahead and pull the MySQL image as well, before we run the app:
+
+```bash
+$ docker pull orchardup/mysql
+```
+
 ###9. Run the application
 
 Once the project is built, you can run `docker-compose start` to start the web and database containers.

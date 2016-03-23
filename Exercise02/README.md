@@ -60,7 +60,7 @@ If you don't specify a variant, for example you just use ``ubuntu``, then Docker
 
 ## Getting a new image
 
-So how do you get new images? Well Docker will automatically download any image you use that isn't already present on the Docker host. But this can potentially add some time to the launch of a container. If you want to pre-load an image you can download it using the docker pull command. Suppose you'd like to download the centos image.
+So how do you get new images? Well Docker will automatically download any image you use that isn't already present on the Docker host. But this can potentially add some time to the launch of a container. If you want to pre-load an image you can download it using the `docker pull` command. Suppose you'd like to download the centos image.
 
 ```bash
 $ docker pull centos
