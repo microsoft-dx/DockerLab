@@ -31,16 +31,11 @@ Docker containers wrap up a piece of software in a complete filesystem that cont
 
 Docker containers are **lightweight**. Containers running on a single machine all share the same operating system kernel so they start instantly and make more efficient use of RAM. Images are constructed from layered filesystems so they can share common files, making disk usage and image downloads much more efficient.
 
-<table border="0" cellpadding="0" cellspacing="0">
-    <tr>
-        <td style="width: 50%;">
-            <img src="images/what-is-docker-diagram.png"/>
-        </td>
-        <td style="width: 50%;">
-            <img src="images/what-is-vm-diagram.png" style="margin-top: 245px;"/>
-        </td>
-    </tr> 
-</table>
+![](images/what-is-docker.png)
+
+Each **virtual machine** includes the application, the necessary binaries and libraries and an entire guest operating system - all of which may be tens of GBs in size.
+
+By contrast, **Containers** include the application and all of its dependencies, but share the kernel with other containers. They run as an isolated process in userspace on the host operating system. They're also not tied to any specific infrastructure - Docker containers run on any computer, on any infrastructure and in any cloud. 
 
 ## Why use Docker to build applications?
 
@@ -71,7 +66,7 @@ Microsoft Azure is a great platform for running Docker workloads. Why?
 4. It allows you to [run Docker on Windows](https://azure.microsoft.com/en-us/blog/docker-client-for-windows-is-now-available/). 
 5. It allows you to run [ASP.NET websites on Linux with Docker](https://blogs.msdn.microsoft.com/webdev/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker/) by using Microsoft-supported, open source frameworks like [ASP.NET MVC 5](http://www.asp.net/mvc/mvc5) and [.NET Core](https://github.com/dotnet/core).
 
-**Are you convinced yet?** Go ahead and [set up your environment](Setup/README.md) and try the exercises in this lab!
+**Want to try it out for yourself?** Then go ahead and [set up your environment](Setup/README.md) and try the exercises in this lab!
 
 
 ### References
