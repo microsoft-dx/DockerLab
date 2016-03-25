@@ -2,9 +2,19 @@
 
 #Setup - Create a Free Azure Subscription and set up Ubuntu Docker Host
 
-In order to create a free Azure Subscription, you can either use a Microsoft Azure Pass - provided you have got a code - or create a free trial.
+In order to create a free Azure Subscription, you can either use 
 
-## 1a. Use a Microsoft Azure Pass
+- the free monthly Azure credit which comes with the (also free) [Visual Studio Dev Essentials](https://azure.microsoft.com/en-gb/pricing/member-offers/vs-dev-essentials/) offer.
+- a [Microsoft Azure Pass](http://www.microsoftazurepass.com/) - provided you have received a code from Microsoft representatives or partners
+- a standard [Azure free trial](https://azure.microsoft.com/en-us/free/).
+
+## 1a. Sign up for Visual Studio Dev Essentials.
+
+[Visual Studio Dev Essentials](https://azure.microsoft.com/en-gb/pricing/member-offers/vs-dev-essentials/) is a free bundle from Microsoft which offers developers the chance to experiment and learn with MS-ecosystem solutions like: Azure, Xamarin, Visual Studio, Visual Studio Team Services and so on.
+
+Follow the link above to sign up for Visual Studio Dev Essentials and activate your free Azure benefits.
+
+## 1b. Use a Microsoft Azure Pass
 
 By using a [Microsoft Azure Pass](http://www.microsoftazurepass.com/) code, you can create a free trial subscription without the need of a credit card.
 
@@ -31,9 +41,9 @@ Once you have those, follow the steps below to get your subscription. The [Azure
 5. Fill in the form and click **Activate** to activate your Azure Pass.
 
 
-## 1b. Get a Microsoft Trial subscription
+## 1c. Get an Azure Trial subscription
 
-Alternatively, you can get a $200 trial subscription for Microsoft Azure, to use in order to test any services currently available in the Microsoft cloud. 
+Alternatively, you can get a standard trial subscription for Microsoft Azure, to use in order to test any services currently available in the Microsoft cloud. 
 
 Navigate to the [Azure portal](https://azure.microsoft.com/en-us/free/) and follow the instructions in order to obtain a free Azure trial.
 
